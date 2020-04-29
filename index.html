@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>Realtime communication with WebRTC</title>
+
+  <link rel="stylesheet" href="/css/main.css" />
+
+</head>
+
+<body>
+
+  <h1>Realtime communication with WebRTC</h1>
+
+  <div id="videos">
+    <table border="1" width="100%">
+        <tr>
+          <th>
+            Local Video
+          </th>
+          <th>
+            Remote Video
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <video id="localVideo" autoplay muted playsinline></video>
+            <button id="byeButton">BYE</button>
+          </td>
+          <td>
+            <video id="remoteVideo" autoplay playsinline></video>
+          </td>
+        </tr>
+        <tr>
+          <td align="center">
+            <textarea rows="4" cols="60" id="dataChannelSend" disabled placeholder="This will be enabled once the data channel is up..."></textarea>
+          </td>
+          <td align="center">
+            <textarea rows="4" cols="60" id="dataChannelReceive" disabled></textarea>
+          </td>
+          <td align="center">
+            <button id="sendButton" disabled>Send</button>
+          </td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+  <!-- This file is automatically added/served when running "node index.js". -->
+  <script src="/socket.io/socket.io.js"></script>
+    <!--<script src="js/lib/adapter.js"></script>-->
+  <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
