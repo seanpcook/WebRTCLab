@@ -23,6 +23,8 @@ Tutorial found at:
 <https://codelabs.developers.google.com/codelabs/webrtc-web>
 
 ## Goals
+  •Develop new way of entering virtual room for local user, call getUserMedia and allow user to setup devices before connecting to the pc, also add button to leave call.
+  
   •Confirm TURN server relay works when the stream cannot be delivered via UDP and learn about scaling this type of server.
   
   •Learn how to host from a production site and test capabilities.
