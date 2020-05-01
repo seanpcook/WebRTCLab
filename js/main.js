@@ -45,9 +45,6 @@ var pcConstraints = {
   ]
 };
 
-var byeButton = document.getElementById('byeButton');
-byeButton.disabled = true;
-
 //Data channel information
 var sendChannel, receiveChannel;
 var sendButton = document.getElementById('sendButton');
@@ -176,7 +173,6 @@ function createPeerConnection() {
     pc.onicecandidate = handleIceCandidate;
     pc.onaddstream = handleRemoteStreamAdded;
     pc.onremovestream = handleRemoteStreamRemoved;
-    byeButton.disabled = false;
     console.log('Created RTCPeerConnnection');
   } catch (e) {
     console.log('Failed to create PeerConnection, exception: ' + e.message);
@@ -345,11 +341,4 @@ function stop() {
   isStarted = false;
   pc.close();
   pc = null;
-}
-
-byeButton.onclick = disconnected;
-
-function disconnected () {
-  var connectionState = pc.connectionState;
-  if (connectionState === 'disconnected') handleRemoteHangup();
 }
